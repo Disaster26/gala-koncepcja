@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Piekarnia Gala - koncept strony</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--krem:#F7F1E6;--krem2:#EFE5D3;--braz:#2B1D14;--braz2:#5A4334;--zloto:#C8913A;--zloto2:#A8731F;--bialy:#fff;--linia:#E2D6C2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--krem);color:var(--braz);font:400 16px/1.65 Inter,system-ui,sans-serif}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;line-height:1.12;margin:0}
+.pasek-koncept{background:var(--braz);color:#F3E3C6;font-size:.78rem;text-align:center;padding:8px 16px;letter-spacing:.02em}
+.pasek-koncept b{color:#fff}
+header{position:sticky;top:0;z-index:20;background:rgba(247,241,230,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--linia)}
+header .wrap{display:flex;align-items:center;gap:24px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo i{width:38px;height:38px;border-radius:50%;background:var(--zloto);display:grid;place-items:center;color:#fff;font:700 1.1rem Fraunces,serif;font-style:normal}
+.logo span{font:700 1.3rem Fraunces,serif;letter-spacing:.02em}
+.logo small{display:block;font:500 .62rem Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--braz2);margin-top:-2px}
+nav{display:flex;gap:22px;margin-left:auto;font-size:.92rem;font-weight:500}
+nav a{text-decoration:none;opacity:.85}
+nav a:hover{opacity:1;color:var(--zloto2)}
+.tel{background:var(--braz);color:#fff;text-decoration:none;padding:9px 16px;border-radius:999px;font-weight:700;font-size:.9rem;white-space:nowrap}
+.menu-btn{display:none}
+.hero{position:relative;min-height:min(88vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,19,11,.86) 0%,rgba(30,19,11,.55) 45%,rgba(30,19,11,.1) 80%),linear-gradient(0deg,rgba(30,19,11,.6),transparent 40%)}
+.hero .wrap{position:relative;z-index:1;padding-bottom:72px;padding-top:120px}
+.oczko{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--zloto)}
+.oczko::before{content:"";width:28px;height:2px;background:currentColor}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4.4rem);max-width:15ch;margin:16px 0 18px}
+.hero p{font-size:1.12rem;max-width:46ch;color:#F1E6D4;margin:0 0 28px}
+.btny{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .16s ease,background .2s ease}
+.btn:active{transform:scale(.97)}
+.btn-z{background:var(--zloto);color:#1E130B}
+.btn-z:hover{background:#D9A24A}
+.btn-o{border:1.5px solid rgba(255,255,255,.7);color:#fff}
+.btn-o:hover{background:rgba(255,255,255,.1)}
+.liczby{background:var(--braz);color:#F3E3C6}
+.liczby .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.liczby div{padding:30px 22px;border-left:1px solid rgba(255,255,255,.1)}
+.liczby div:first-child{border-left:0}
+.liczby b{display:block;font:700 2.2rem Fraunces,serif;color:#fff}
+.liczby span{font-size:.88rem}
+section{padding:96px 0}
+.nag{max-width:640px;margin-bottom:44px}
+.nag h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin:14px 0 14px}
+.nag p{color:var(--braz2);margin:0;font-size:1.05rem}
+.wyroby{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.karta{background:var(--bialy);border:1px solid var(--linia);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;text-decoration:none}
+.karta:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(43,29,20,.12)}
+.karta img{aspect-ratio:4/3;object-fit:cover}
+.karta div{padding:20px 22px 24px}
+.karta h3{font-size:1.3rem;margin-bottom:8px}
+.karta p{margin:0;color:var(--braz2);font-size:.94rem}
+.karta .wiecej{display:inline-block;margin-top:12px;font-weight:700;color:var(--zloto2);font-size:.9rem}
+.b2b{background:var(--krem2)}
+.b2b .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.b2b img{border-radius:22px;aspect-ratio:4/3;object-fit:cover;box-shadow:0 24px 60px rgba(43,29,20,.18)}
+.lista{list-style:none;padding:0;margin:26px 0 30px;display:grid;gap:14px}
+.lista li{display:flex;gap:14px;align-items:flex-start}
+.lista li::before{content:"";flex:0 0 22px;height:22px;border-radius:50%;background:var(--zloto) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E130B' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat;margin-top:2px}
+.btn-c{background:var(--braz);color:#fff}
+.btn-c:hover{background:#3d2a1d}
+.historia .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.os{position:relative;padding-left:28px;border-left:2px solid var(--linia)}
+.os div{position:relative;margin-bottom:30px}
+.os div::before{content:"";position:absolute;left:-36px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--zloto);box-shadow:0 0 0 5px var(--krem)}
+.os b{font:700 1.2rem Fraunces,serif;display:block}
+.os p{margin:4px 0 0;color:var(--braz2)}
+.foto-hist{border-radius:22px;aspect-ratio:4/5;object-fit:cover}
+.praca{background:var(--braz);color:#F3E3C6}
+.praca .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.praca h2{color:#fff;font-size:clamp(1.8rem,3.2vw,2.5rem);margin:12px 0 10px}
+.praca p{margin:0;max-width:56ch}
+.stanowiska{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.stanowiska span{border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:999px;font-size:.84rem}
+.kontakt .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.dane{display:grid;gap:18px}
+.dane div{background:var(--bialy);border:1px solid var(--linia);border-radius:16px;padding:20px 22px}
+.dane small{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--zloto2);font-weight:700;margin-bottom:4px}
+.dane a{text-decoration:none;font-weight:700;font-size:1.1rem}
+form{background:var(--bialy);border:1px solid var(--linia);border-radius:20px;padding:28px;display:grid;gap:14px}
+form h3{font-size:1.5rem}
+label{font-size:.8rem;font-weight:700;color:var(--braz2);display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border:1px solid var(--linia);border-radius:12px;background:var(--krem);color:var(--braz)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--zloto);border-color:transparent}
+footer{background:#1E130B;color:#BFAE96;padding:40px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.notka{display:inline-block;background:#FFF3DA;border:1px dashed var(--zloto);color:var(--braz2);font-size:.78rem;padding:4px 10px;border-radius:8px;margin-top:10px}
+@media(max-width:980px){
+  nav,.tel{display:none}
+  .menu-btn{display:block;margin-left:auto;background:none;border:1px solid var(--linia);border-radius:10px;width:44px;height:40px;font-size:1.2rem}
+  .liczby .wrap{grid-template-columns:repeat(2,1fr)}
+  .liczby div:nth-child(3){border-left:0}
+  .wyroby{grid-template-columns:repeat(2,1fr)}
+  .b2b .wrap,.historia .wrap,.kontakt .wrap{grid-template-columns:1fr;gap:36px}
+  section{padding:68px 0}
+}
+@media(max-width:560px){
+  .wyroby{grid-template-columns:1fr}
+  .hero .wrap{padding-bottom:48px}
+  .liczby b{font-size:1.7rem}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="pasek-koncept"><b>Koncept strony dla Gala sp. z o.o.</b> - podgląd roboczy do akceptacji. Teksty i zdjęcia poglądowe, docelowo Państwa zdjęcia zakładu i wyrobów.</div>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><i>G</i><span>GALA<small>Piekarnia · Wojnicz</small></span></a>
+    <nav>
+      <a href="#wyroby">Wyroby</a>
+      <a href="#partnerzy">Dla partnerów</a>
+      <a href="#historia">O nas</a>
+      <a href="#praca">Praca</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="tel" href="tel:+48183514019">18 351 40 19</a>
+    <button class="menu-btn" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="hero" id="top" style="padding:0">
+  <img src="img/hero.webp" alt="Chleb na drewnianej desce w piekarni">
+  <div class="wrap">
+    <span class="oczko">Piekarnia Gala · od pokoleń</span>
+    <h1>Codzienny chleb z Wojnicza</h1>
+    <p>Rodzinne receptury z Bobowej i nowoczesny zakład w Wojniczu. Wypiekamy pieczywo dla sklepów, sieci i gastronomii w całej Małopolsce.</p>
+    <div class="btny">
+      <a class="btn btn-z" href="#partnerzy">Oferta dla sklepów i sieci &rarr;</a>
+      <a class="btn btn-o" href="#wyroby">Zobacz nasze wyroby</a>
+    </div>
+  </div>
+</section>
+
+<div class="liczby">
+  <div class="wrap">
+    <div><b>~80 lat</b><span>tradycji piekarskiej, od Bobowej</span></div>
+    <div><b>15 000 m²</b><span>nowoczesnej piekarni w Wojniczu</span></div>
+    <div><b>Codziennie</b><span>świeże dostawy do partnerów</span></div>
+    <div><b>Małopolska</b><span>i okolice, własny transport</span></div>
+  </div>
+</div>
+
+<section id="wyroby">
+  <div class="wrap">
+    <div class="nag">
+      <span class="oczko">Nasze wyroby</span>
+      <h2>Pieczywo, które wraca na stół</h2>
+      <p>Każda grupa wyrobów ma na stronie osobną zakładkę ze zdjęciami, składem i alergenami. Klient i kupiec widzą od razu, co jest w ofercie.</p>
+    </div>
+    <div class="wyroby">
+      <a class="karta" href="#"><img src="img/hero.webp" alt="Chleby"><div><h3>Chleby</h3><p>Pszenne, żytnie i mieszane, na zakwasie i drożdżach. Klasyka i chleby regionalne.</p><span class="wiecej">Zobacz chleby &rarr;</span></div></a>
+      <a class="karta" href="#"><img src="img/bulki.webp" alt="Bułki"><div><h3>Bułki i pieczywo drobne</h3><p>Kajzerki, grahamki, bułki z ziarnami i pieczywo na co dzień.</p><span class="wiecej">Zobacz bułki &rarr;</span></div></a>
+      <a class="karta" href="#"><img src="img/slodkie.webp" alt="Słodkie wypieki"><div><h3>Słodkie wypieki</h3><p>Drożdżówki, ciasta i wypieki świąteczne według sezonu.</p><span class="wiecej">Zobacz słodkie &rarr;</span></div></a>
+      <a class="karta" href="#"><img src="img/zaklad.webp" alt="Dla gastronomii"><div><h3>Dla gastronomii</h3><p>Pieczywo do restauracji, hoteli i stołówek, także na indywidualne zamówienie.</p><span class="wiecej">Zapytaj o ofertę &rarr;</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="b2b" id="partnerzy">
+  <div class="wrap">
+    <div>
+      <span class="oczko">Dla partnerów handlowych</span>
+      <div class="nag" style="margin-bottom:0"><h2>Świeże pieczywo na Państwa półkach każdego ranka</h2>
+      <p>Najważniejsza zakładka dla kupców. Krótko i konkretnie: dla kogo pieczemy, jak wygląda współpraca i jak zacząć.</p></div>
+      <ul class="lista">
+        <li><span><b>Sklepy i sieci handlowe</b> - stały asortyment i dostawy o ustalonej porze.</span></li>
+        <li><span><b>Gastronomia i hotele</b> - pieczywo pod menu, także wyroby na zamówienie.</span></li>
+        <li><span><b>Własny transport</b> - dostawy realizowane przez naszą flotę.</span></li>
+        <li><span><b>Jeden opiekun</b> - stały kontakt do działu handlowego.</span></li>
+      </ul>
+      <a class="btn btn-c" href="#kontakt">Zostań naszym partnerem &rarr;</a>
+    </div>
+    <img src="img/dostawy.webp" alt="Załadunek pieczywa do dostawy">
+  </div>
+</section>
+
+<section class="historia" id="historia">
+  <div class="wrap">
+    <img class="foto-hist" src="img/zaklad.webp" alt="Hala produkcyjna piekarni">
+    <div>
+      <div class="nag"><span class="oczko">O nas</span><h2>Od małej piekarni w Bobowej do jednej z największych w Małopolsce</h2></div>
+      <div class="os">
+        <div><b>Początki w Bobowej</b><p>Rodzinna piekarnia i receptury przekazywane z pokolenia na pokolenie.</p></div>
+        <div><b>Rozwój firmy</b><p>Kolejne lata, nowi odbiorcy i rosnąca rodzina wyrobów Gala.</p></div>
+        <div><b>Zakład w Wojniczu</b><p>Nowoczesna piekarnia o powierzchni 15 000 m², a w niej ten sam smak.</p></div>
+      </div>
+      <span class="notka">Tu wpiszemy daty i historię firmy od Państwa.</span>
+    </div>
+  </div>
+</section>
+
+<section class="praca" id="praca">
+  <div class="wrap">
+    <div>
+      <span class="oczko">Praca w Gala</span>
+      <h2>Dołącz do naszego zespołu</h2>
+      <p>Osobna zakładka z aktualnymi ofertami pracy i prostym formularzem zgłoszeniowym. Kandydat aplikuje z telefonu w minutę.</p>
+      <div class="stanowiska"><span>Piekarz</span><span>Pomocnik piekarza</span><span>Kierowca - dostawy</span><span>Pracownik produkcji</span><span>Magazyn</span></div>
+    </div>
+    <a class="btn btn-z" href="#kontakt">Zobacz oferty pracy &rarr;</a>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div>
+      <div class="nag"><span class="oczko">Kontakt</span><h2>Porozmawiajmy o współpracy</h2>
+      <p>Telefony do działów, adres zakładu i mapa dojazdu. Wszystko klikalne na telefonie.</p></div>
+      <div class="dane">
+        <div><small>Zakład i biuro</small><b>Gala sp. z o.o.</b><br>ul. Wolicka 19, 32-830 Wojnicz</div>
+        <div><small>Telefon</small><a href="tel:+48183514019">18 351 40 19</a></div>
+        <div><small>E-mail</small><a href="mailto:biuro@piekarniagala.pl">biuro@piekarniagala.pl</a></div>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('button').textContent='To tylko koncept - formularz zadziała na gotowej stronie'">
+      <h3>Zapytanie handlowe</h3>
+      <label>Nazwa firmy<input placeholder="np. Sklep spożywczy Jan Kowalski"></label>
+      <label>Rodzaj działalności<select><option>Sklep / sieć handlowa</option><option>Gastronomia / hotel</option><option>Inne</option></select></label>
+      <label>Telefon lub e-mail<input placeholder="Jak możemy się skontaktować?"></label>
+      <label>Wiadomość<textarea rows="3" placeholder="Jakie pieczywo i jak często?"></textarea></label>
+      <button class="btn btn-c" style="border:0;cursor:pointer;justify-content:center">Wyślij zapytanie</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Gala sp. z o.o. · Piekarnia w Wojniczu</span>
+    <span>Koncept: inż. Łukasz Stasiak · bibliotekanaukowa.pl</span>
+  </div>
+</footer>
+</body>
+</html>
